@@ -1,0 +1,1014 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+    font-family: arial;
+}
+
+body {
+    min-height: 200vh;
+    font-family: 'Overlock SC', cursive;
+    background-color: #ddd;
+}
+
+.wrapper {
+    max-width: 1920px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* HEADER */
+
+header {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('images/mobile/header2.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: hidden;
+    margin-bottom: 10vh;
+}
+
+
+header .topper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    min-height: 10vh;
+    background-color: rgba(50, 50, 50, .9);
+    z-index: 1;
+    box-shadow: 0 0 20px 1px grey;
+    color: white;
+}
+
+/* NAWIGACJA */
+
+header nav {
+    display: none;
+}
+
+header nav.mobile {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(245, 245, 245);
+
+}
+
+header nav.mobile ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    list-style: none;
+
+}
+
+header nav.mobile ul li {
+    width: 60%;
+    border-top: solid 1px black;
+    text-align: center;
+}
+
+header nav.mobile ul li:nth-child(1) {
+    border-top: none;
+    margin-top: 5vh;
+}
+
+
+header nav.mobile ul li a {
+    display: block;
+    padding: 5vh;
+    text-decoration: none;
+    font-size: 1.8rem;
+    color: black;
+    cursor: pointer;
+    letter-spacing: 2px;
+}
+
+header .topper .burger {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30%;
+    min-height: 100%;
+    font-size: 2.5rem;
+    margin-right: 5%;
+    z-index: 1;
+    cursor: pointer;
+
+}
+
+header .topper .burger .fas {
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    transform: translate(-50%, -50%);
+    padding: 7% 0;
+}
+
+header .topper .burger .fa-times {
+    display: none;
+}
+
+header .topper .burger .fa-times.active {
+    display: block;
+    color: black;
+}
+
+header .topper .burger .fa-bars.active {
+    display: block;
+}
+
+header .topper .burger .fa-bars {
+    display: none;
+}
+
+/* BANER */
+
+header .banner {
+    width: 100%;
+    height: 100%;
+}
+
+header .banner img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0;
+    animation: show 10s infinite;
+}
+
+@keyframes show {
+
+    10% {
+        opacity: 0
+    }
+
+    49% {
+        opacity: 1
+    }
+
+    50% {
+        opacity: 1
+    }
+
+    51% {
+        opacity: 1
+    }
+
+    90% {
+        opacity: 0
+    }
+}
+
+header .banner .hgroup {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    color: black;
+    text-shadow: 0 0 4px black;
+    background-color: rgba(255, 255, 255, .7);
+    text-align: center;
+    cursor: default;
+}
+
+header .banner .hgroup h1 {
+    text-transform: uppercase;
+    font-size: 3.5rem;
+    font-weight: bold;
+    padding: 5%;
+    text-shadow: 0 0 6px black;
+    letter-spacing: 5px;
+}
+
+header .banner .hgroup h2 {
+    font-size: 2.5rem;
+    padding: 5%;
+    padding-top: 0;
+    letter-spacing: 2px;
+}
+
+
+header .banner .arrow {
+    position: fixed;
+    bottom: 5vh;
+    right: 10vw;
+    width: 12vw;
+    height: 12vw;
+    border-radius: 50%;
+    border: 2px solid white;
+    background-color: rgba(100, 100, 100, .7);
+    transform: rotate(180deg);
+    overflow: hidden;
+    z-index: 3;
+}
+
+header .banner .arrow.hide {
+    transform: scale(0);
+}
+
+
+header .banner .arrow i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: 0 12px 1px black, 0 -12px 1px white;
+    color: grey;
+    font-size: 3rem;
+    font-weight: bold;
+    animation: move 1s linear infinite both;
+}
+
+
+
+@media (min-width: 700px) {
+
+    header .banner .arrow {
+        display: none;
+    }
+
+}
+
+
+@keyframes move {
+    0% {
+        top: -30px;
+    }
+
+    100% {
+        top: 50px;
+    }
+}
+
+
+
+@media(min-width: 400px) {
+
+    header .banner .hgroup h1 {
+        font-size: 4rem;
+        letter-spacing: 8px;
+    }
+
+    header .banner .hgroup h2 {
+        font-size: 3rem;
+        letter-spacing: 5px;
+    }
+
+    header nav.mobile ul li a {
+        font-size: 2rem;
+    }
+}
+
+
+@media(min-width: 699px) {
+
+    header .topper .burger .fas {
+        font-size: 4rem;
+    }
+
+    header nav.mobile ul li a {
+        letter-spacing: 3px;
+    }
+
+}
+
+@media(min-width: 1023px) {
+
+    header {
+        background-image: url('images/desctop/header2.jpg');
+    }
+
+    /* ZMIANA NAWIGACJI */
+
+    header .topper .burger {
+        display: none;
+    }
+
+    header nav.mobile {
+        display: none;
+    }
+
+    header nav {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 70%;
+        height: 100%;
+
+    }
+
+    header nav ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        list-style: none;
+        padding-right: 5%;
+
+    }
+
+
+    header nav ul li {
+        flex-grow: 1;
+        flex-basis: 15%;
+        text-align: center;
+    }
+
+    header nav ul li a {
+        display: block;
+        padding: 10% 0;
+        text-decoration: none;
+        font-size: 2.5rem;
+        color: white;
+        letter-spacing: 2px;
+        transition: .2s;
+    }
+
+    header nav ul li a:hover {
+        color: black;
+        font-size: 3rem;
+    }
+
+    header .banner .hgroup h1 {
+        font-size: 6rem;
+    }
+
+    header .banner .hgroup h2 {
+        font-size: 4rem;
+        ;
+    }
+}
+
+
+@media (min-width: 1280px) {
+
+    header .topper nav ul li a {
+        font-size: 3rem;
+    }
+
+}
+
+@media(orientation: landscape) {
+
+    header nav.mobile ul li a {
+        padding: 10%;
+        font-size: 2.3rem;
+    }
+
+    header .banner .hgroup {
+        top: 55%;
+        background-color: rgba(255, 255, 255, .6);
+
+    }
+
+    header .banner .hgroup h1 {
+        padding: 2%;
+    }
+
+    header .banner .hgroup h2 {
+        padding: 2%;
+    }
+}
+
+@media(min-width: 500px) and (orientation: landscape) {
+    header nav.mobile ul li a {
+        padding: 6%;
+        font-size: 2rem;
+    }
+}
+
+
+
+
+@media(min-width: 700px) and (orientation: landscape) {
+
+    header .banner .hgroup h1 {
+        font-size: 5rem;
+    }
+
+    header .banner .hgroup h2 {
+        font-size: 3rem;
+    }
+
+}
+
+
+@media(min-width: 1000px) and (orientation: landscape) {
+
+    header .banner .hgroup h1 {
+        font-size: 7rem;
+    }
+
+    header .banner .hgroup h2 {
+        font-size: 5rem;
+    }
+
+}
+
+/* POP-UP */
+
+.modal-wrap.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    min-height: 100vh;
+    z-index: 2;
+    background-color: rgba(200, 200, 200, 0.5);
+}
+
+.wrapper.active {
+    filter: blur(3px);
+}
+
+
+.modal-wrap .modal {
+    display: none;
+}
+
+.modal-wrap.active .modal {
+    display: block;
+    width: 60%;
+    height: 60%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid rgb(50, 50, 50);
+    background-color: whitesmoke;
+    box-shadow: 0 0 25px 5px rgb(50, 50, 50);
+}
+
+.modal-wrap.active .modal .modal-contain {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: 100%;
+    font-size: 1.5rem;
+    font-family: 'Overlock', cursive;
+    cursor: default;
+}
+
+
+.modal-wrap.active .modal .modal-contain .title {
+    width: 100%;
+    padding: 5% 0 2% 0;
+    border-bottom: 2px solid rgb(50, 50, 50);
+    text-transform: uppercase;
+    font-size: 2rem;
+
+}
+
+.modal-wrap.active .modal .modal-contain section {
+    padding-top: 5%;
+    flex-grow: 1;
+}
+
+.modal-wrap.active .modal .modal-contain span {
+    padding-right: 5px;
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.modal-wrap.active .modal .close {
+    position: absolute;
+    top: 0;
+    right: 2%;
+    font-size: 3rem;
+    color: rgb(50, 50, 50);
+    transition: .2s;
+    cursor: pointer;
+}
+
+@media (orientation: portrait) {
+
+    .modal-wrap.active .modal {
+        width: 90%;
+        height: 90%;
+    }
+
+}
+
+@media (orientation: portrait) and (min-width: 400px) {
+
+    .modal-wrap.active .modal .modal-contain {
+        font-size: 1.8rem;
+    }
+
+    .modal-wrap.active .modal .modal-contain .title {
+        font-size: 2.2rem;
+    }
+
+}
+
+@media (orientation: portrait) and (min-width: 500px) {
+
+    .modal-wrap.active .modal {
+        width: 80%;
+        height: 80%;
+    }
+
+    .modal-wrap.active .modal .modal-contain {
+        font-size: 1.8rem;
+    }
+
+    .modal-wrap.active .modal .modal-contain .title {
+        font-size: 2.5rem;
+    }
+}
+
+
+@media (orientation: landscape) {
+    .modal-wrap.active .modal {
+        width: 90%;
+        height: 90%;
+    }
+
+    .modal-wrap.active .modal .modal-contain {
+        font-size: 1.3rem;
+    }
+
+    .modal-wrap.active .modal .modal-contain .title {
+        font-size: 1.5rem;
+    }
+
+}
+
+@media (orientation: landscape) and (min-width: 600px) {
+
+    .modal-wrap.active .modal {
+        width: 80%;
+        height: 80%;
+    }
+
+    .modal-wrap.active .modal .modal-contain {
+        font-size: 1.6rem;
+    }
+
+    .modal-wrap.active .modal .modal-contain .title {
+        font-size: 1.8rem;
+    }
+
+}
+
+@media (min-width: 1024px) {
+
+    .modal-wrap.active .modal {
+        width: 70%;
+        height: 70%;
+    }
+
+    .modal-wrap.active .modal .modal-contain {
+        font-size: 2rem;
+    }
+
+    .modal-wrap.active .modal .modal-contain .title {
+        font-size: 2.5rem;
+    }
+
+    .modal-wrap.active .modal .close:hover {
+        font-size: 4rem;
+    }
+
+}
+
+@media (min-width: 1280px) {
+
+    .modal-wrap.active .modal {
+        height: 70%;
+    }
+}
+
+/* MAIN for mobile views*/
+
+main section {
+    min-height: 90vh;
+    margin-top: 10vh;
+
+}
+
+main section .section-wrap,
+main section .text {
+    min-height: 42.5vh;
+    background-color: #bbb;
+}
+
+main section .section-wrap {
+    margin-bottom: 5vh;
+}
+
+main section .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
+    left: 100%;
+    text-align: justify;
+    transition: .5s .5s linear;
+}
+
+main section .text.active {
+    left: 0;
+}
+
+main section:nth-child(2) .text {
+    left: -100%;
+}
+
+main section:nth-child(2) .text.active {
+    left: 0;
+}
+
+main section .text p {
+    text-indent: 5%;
+    font-size: 1.6rem;
+    font-family: Overlock, cursive;
+    padding: 3%;
+}
+
+main section .text ul {
+    list-style-type: none;
+    padding: 5%;
+}
+
+main section .text p::first-letter {
+    font-size: 1.8rem;
+}
+
+main section.contact .text i {
+    font-size: 2rem;
+    vertical-align: bottom;
+    padding-right: 3%;
+}
+
+main section .section-wrap .title {
+    position: relative;
+    left: -100%;
+    height: 10vh;
+    margin-bottom: 2.5vh;
+    background-color: black;
+    color: white;
+    line-height: 10vh;
+    transition: .5s linear;
+    text-align: center;
+}
+
+main section .section-wrap .title.active {
+    left: 0;
+}
+
+main section:nth-child(2) .section-wrap .title {
+    left: 100%;
+    position: relative;
+}
+
+main section .section-wrap .title h1 {
+    font-size: 2.5rem;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+}
+
+main section:nth-child(2) .section-wrap .title.active {
+    left: 0;
+}
+
+main section .section-wrap .photo {
+    min-height: 30vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+main section:nth-child(1) .section-wrap .photo {
+    background-image: url('images/pic1.jpg');
+}
+
+main section:nth-child(2) .section-wrap .photo {
+    background-image: url('images/pic2.jpg');
+}
+
+main section:nth-child(3) .section-wrap .photo {
+    background-image: url('images/pic3.jpg');
+}
+
+@media (min-width: 700px) {
+
+    main section {
+        display: flex;
+        height: 87vh;
+        margin-bottom: 13vh;
+    }
+
+
+    main section .section-wrap,
+    main section .text {
+        flex-basis: 50%;
+        height: 100%;
+    }
+
+    main section .section-wrap {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+
+    main section .text.active .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 70%;
+        height: 70%;
+    }
+
+    main section .section-wrap .title h1 {
+        font-size: 3.5rem;
+    }
+
+    main section .text p {
+        padding: 5%;
+    }
+
+    main section .text p {
+        margin-left: 2.5vh;
+        font-size: 1.1rem;
+    }
+
+    main section:nth-child(2) .text p {
+        padding: 2%;
+    }
+
+    main section:nth-child(2) .text h2 {
+        font-size: 1.8rem;
+    }
+
+    main section .section-wrap .title {
+        flex-basis: 15vh;
+
+    }
+
+    main section .section-wrap .photo {
+        flex-grow: 1;
+    }
+
+    main section:nth-child(2) .section-wrap {
+        order: 2;
+    }
+
+    main section:nth-child(2) .text {
+        margin-left: 0;
+        margin-right: 2.5vh;
+        order: 1;
+    }
+
+}
+
+@media (min-width: 1024px) {
+
+    main section .text p {
+        font-size: 1.8rem;
+        line-height: 150%;
+    }
+
+    main section:nth-child(2) .text h2 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    main section .text p {
+        font-size: 2rem;
+    }
+}
+
+/* Form for mobile views */
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer .form,
+footer .social {
+    width: 100%;
+    background-color: #ccc;
+}
+
+footer .form {
+    position: relative;
+    width: 100%;
+    min-height: 90vh;
+    margin: 10vh 0 5vh 0;
+    font-size: 1.5rem;
+}
+
+footer .form p {
+    position: absolute;
+    top: 5vh;
+    left: 0;
+    width: 100%;
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+footer .form form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+footer .form form label {
+    font-family: 'Overlock SC', cursive;
+}
+
+footer .form input,
+footer .form textarea {
+    display: block;
+    width: 70vw;
+    margin: 2vh 0;
+    font-family: 'Overlock', cursive;
+    padding: 2%;
+    outline: none;
+    resize: none;
+}
+
+footer .form input:focus,
+footer .form textarea:focus {
+    border: 1px solid grey;
+    box-shadow: 0 0 10px 2px grey;
+}
+
+footer .form input {
+    height: 5vh;
+}
+
+footer .form textarea {
+    min-height: 30vh;
+}
+
+footer .form button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY(100%);
+    padding: 0 5%;
+    height: 5vh;
+    font-family: 'Overlock SC', cursive;
+
+}
+
+footer .socials {
+    position: relative;
+    flex-basis: 20vh;
+    width: 100%;
+    color: white;
+    background-color: #000;
+}
+
+footer .socials p {
+    padding: 5% 3%;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+footer .socials .links {
+    position: absolute;
+    left: 50%;
+    bottom: 15%;
+    transform: translateX(-50%);
+    width: 50%;
+    font-size: 3.5rem;
+    text-align: center;
+}
+
+footer .socials .links a {
+    display: inline-block;
+    padding: 5% 5%;
+    text-decoration: none;
+    color: white;
+}
+
+footer p.rights {
+    width: 100%;
+    margin-top: 5vh;
+    padding: 2% 3%;
+    text-align: center;
+    line-height: 5vh;
+    font-size: 1.3rem;
+    background-color: rgba(50, 50, 50, .9);
+}
+
+footer p.rights span {
+    font-weight: bold;
+}
+
+/* footer for desctop views */
+
+@media (min-width: 700px) {
+
+    footer {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    footer .form {
+        flex-basis: 70%;
+        margin: 0 1vw 5vh 0;
+    }
+
+    footer .form form {
+        width: 60%;
+    }
+
+    footer .form p {
+        font-size: 2rem;
+    }
+
+    footer .form form label,
+    footer .form button {
+        font-size: 1.8rem;
+    }
+
+    footer .socials {
+        flex-basis: 28%;
+        min-height: 90vh;
+        margin: 0 0 5vh 0;
+        background-image: url('images/pic4.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    footer .socials p {
+        margin-top: 10%;
+        padding: 5% 3%;
+        font-size: 2.5rem;
+    }
+
+    footer .socials .links {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30%;
+        height: 70%;
+        bottom: 10%;
+        margin-top: 5%;
+        font-size: 4.5rem;
+        background-color: rgba(10, 10, 10, .7);
+    }
+
+    footer .form input,
+    footer .form textarea {
+        width: 100%;
+    }
+
+    footer p.rights {
+        font-size: 2rem;
+    }
+
+
+}
